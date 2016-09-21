@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using ModularFSM;
 
 [RequireComponent (typeof(FSM))]
 public class ExampleController : MonoBehaviour
@@ -15,9 +14,9 @@ public class ExampleController : MonoBehaviour
 	/// <summary>
 	/// This performs a transistion from one state to another and is invoked in an individual states Reason method.
 	/// </summary>
-	public void SetTransistion (FSMTransistion tran, Transform extraData = default(Transform))
+	public void SetTransistion (GlobalStateData.FSMTransistion tran)
 	{
-		_statemachine.PerformTransition (tran, extraData);
+		_statemachine.PerformTransition (tran);
 	}
 	
 	// Update is called once per frame
